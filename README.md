@@ -4,6 +4,8 @@ A JavaScript implementation of the bridge game.
 
 ![bridge](screenshot.png)
 
+A live version of it is hosted [here](https://victorribeiro.com/bridge)
+
 ## Rules
 
 The farmer is the only one who can pilot the boat. The boat only carries two at a time. The goat can never be left alone with the cabbage, or it will devour it. The wolf also cannot be left alone with the goat, or it will eat it too. Can you cross them all?

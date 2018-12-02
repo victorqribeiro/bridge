@@ -4,7 +4,7 @@
   "description": " ",
   "start_url": "index.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "landscape",
   "background_color": "#FFF",
   "theme_color": "#FFF",
   "icons": [

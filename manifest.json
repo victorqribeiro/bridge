@@ -1,7 +1,7 @@
 {
-  "name": " ",
-  "short_name": " ",
-  "description": " ",
+  "name": "Bridge",
+  "short_name": "Bridge",
+  "description": "A JavaScript implementation of the bridge game.",
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "landscape",
@@ -10,12 +10,6 @@
   "icons": [
     {
       "src": "img/farmer.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "density": 1
-    },
-    {
-      "src": "favicon.png",
       "sizes": "512x512",
       "type": "image/png",
       "density": 1

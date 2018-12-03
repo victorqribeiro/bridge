@@ -15,7 +15,7 @@ const filesToCache = [
       './img/wolf.png'
  ];
 
-const staticCacheName = 'bridge-v1.2';
+const staticCacheName = 'bridge-v1.3';
 
 self.addEventListener('install', event => {
   event.waitUntil(

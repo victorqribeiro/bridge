@@ -1,6 +1,10 @@
-let background, canvas, c, w, h, w2, h2, elements, boat, farmer, wolf, goat, cabbage, moves = 0, textures;
-
+let background, canvas, c, w, h, w2, h2, elements, boat, farmer, wolf, goat, cabbage, solve, moves = 0, textures,
+		solution = [1,3,0,3,0,4,0,4,3,0,3,2,0,2,0,3,0,3,1];
+		
 function init(){
+	let old = document.querySelector('canvas');
+	if(old)	
+		old.remove();
 	canvas = document.createElement('canvas');
 	canvas.width = w = innerWidth;
 	canvas.height = h = innerHeight;
@@ -9,7 +13,7 @@ function init(){
 	canvas.addEventListener('click', getElement );
 	
 	c = canvas.getContext('2d');
-	
+  
 	document.body.appendChild(canvas);
 
 	c.shadowColor = 'rgba(0,0,0,0.5)';
@@ -45,10 +49,47 @@ function init(){
 	elements.push( goat );
 	elements.push( cabbage );
 
+	/* hack to quick implement a solution's button */
+	let solve = {
+		pos: {
+			x: w-150,
+			y: h-50
+		},
+		h: 30,
+		w: 100,
+		
+		show: function(){
+			c.fillStyle = 'gray';
+			c.fillRect(this.pos.x, this.pos.y, this.w, this.h);
+			c.fillStyle = 'black';
+			c.font = '1.2rem Arial';
+			let text = 'Solve';
+			let m = c.measureText(text);
+			c.fillText(text, this.pos.x+m.width/2, this.pos.y+20);
+		},
+		
+		action: function(){
+			init();
+			canvas.removeEventListener('click', getElement);
+			solveMe();
+		}
+	};
+
+	elements.push( solve );
+
 	draw();
 }
 
+function solveMe(){
+	if( solution.length > 0 ){
+		elements[ solution.shift() ].action();
+		draw();
+		setTimeout( solveMe, 1000 );
+	}
+}
+
 function draw(){
+	c.fillStyle = background;
 	c.fillRect(0,0,w,h);
 	for(let i = 0; i < elements.length; i++){
 		elements[i].show();
@@ -116,5 +157,5 @@ function loadImages(){
 loadImages();
 
 window.onresize = function(){
-	history.go(0);
+	init();
 };

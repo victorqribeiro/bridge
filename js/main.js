@@ -1,10 +1,13 @@
-let background, canvas, c, w, h, w2, h2, elements, boat, farmer, wolf, goat, cabbage, solve, moves = 0, textures,
-		solution = [1,3,0,3,0,4,0,4,3,0,3,2,0,2,0,3,0,3,1];
+let background, canvas, c, w, h, w2, h2, elements, boat, farmer, wolf, goat, cabbage, moves, textures, solution;
 		
 function init(){
 	let old = document.querySelector('canvas');
-	if(old)	
+	if(old)
 		old.remove();
+	
+	moves = 0;
+	solution = [1,3,0,3,0,4,0,4,3,0,3,2,0,2,0,3,0,3,1];
+	
 	canvas = document.createElement('canvas');
 	canvas.width = w = innerWidth;
 	canvas.height = h = innerHeight;

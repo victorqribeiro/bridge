@@ -131,7 +131,7 @@ function gameOver(result){
 	canvas.removeEventListener('click', getElement);
 	setTimeout( function(){
 		canvas.addEventListener('click', function(){
-			history.go(0);
+			init();
 		});
 	}, 1500);
 	c.fillStyle = "black";

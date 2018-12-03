@@ -62,10 +62,10 @@ function check(){
 			farmer.side == 2 && (goat.side == 0 && cabbage.side == 0) ||
 			farmer.side == 1 && (goat.side == 3 && cabbage.side == 3 )
 	){
-		gameOver('Loose');
+		gameOver('You Lose');
 	}
 	if( farmer.side == 3 && wolf.side == 3 && goat.side == 3 && cabbage.side == 3){
-		gameOver('Win');
+		gameOver('You Win');
 	}
 }
 

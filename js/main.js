@@ -114,7 +114,7 @@ function check(){
 }
 
 let getElement = function(e){
-	let x = e.clientX, y = e.clientY;
+	let x = e.offsetX, y = e.offsetY;
 	let found = null;
 	for(let i = 0; i < elements.length; i++){
 		let e = elements[i];
